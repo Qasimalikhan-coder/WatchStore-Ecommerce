@@ -1,0 +1,247 @@
+/* Modern Luxury Dark Theme CSS */
+
+:root {
+    --bg-dark-primary: #0a0a0a;
+    --bg-dark-secondary: #121212;
+    --bg-dark-tertiary: #1c1c1c;
+    --text-gold: #ffc107;
+    --text-muted-gray: #a0a0a0;
+    --border-color: #2a2a2a;
+}
+
+body {
+    background-color: var(--bg-dark-primary);
+    color: #ffffff;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.bg-dark-900 {
+    background-color: var(--bg-dark-secondary) !important;
+}
+
+.bg-dark-950 {
+    background-color: var(--bg-dark-primary) !important;
+}
+
+/* Custom Text and Icons styling */
+.text-warning {
+    color: var(--text-gold) !important;
+}
+
+.btn-warning {
+    background-color: var(--text-gold);
+    border-color: var(--text-gold);
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #000;
+}
+
+.btn-outline-warning {
+    border-color: var(--text-gold);
+    color: var(--text-gold);
+}
+
+.btn-outline-warning:hover {
+    background-color: var(--text-gold);
+    color: #000;
+}
+
+.text-light-muted {
+    color: #d1d1d1;
+}
+
+.fs-7 {
+    font-size: 0.875rem;
+}
+
+.fs-8 {
+    font-size: 0.75rem;
+}
+
+.fs-9 {
+    font-size: 0.65rem;
+}
+
+.tracking-wider {
+    letter-spacing: 0.15em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.08em;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    min-vh: 85vh;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.92) 35%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+.text-glow {
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Watch Image Floating Animation */
+.floating {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid var(--text-gold);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Hover Grow Utility */
+.hover-grow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+}
+
+.hover-warning:hover {
+    color: var(--text-gold) !important;
+}
+
+/* Title Underline Design */
+.title-underline {
+    width: 70px;
+    height: 3px;
+    background-color: var(--text-gold);
+    border-radius: 2px;
+}
+
+/* Card Zoom and Design */
+.watch-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    border: 1px solid var(--border-color) !important;
+}
+
+.watch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6) !important;
+    border-color: var(--text-gold) !important;
+}
+
+.watch-img {
+    transition: transform 0.6s ease;
+}
+
+.watch-card:hover .watch-img {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.watch-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Floating Live Chat Widget */
+.chat-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--text-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1050;
+    box-shadow: 0 5px 25px rgba(255,193,7,0.4);
+    transition: transform 0.2s ease;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+.chat-panel {
+    position: fixed;
+    bottom: 105px;
+    right: 30px;
+    width: 360px;
+    height: 480px;
+    background-color: var(--bg-dark-secondary);
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--bg-dark-secondary);
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Custom Cart and Admin Layouts */
+.admin-card {
+    background-color: var(--bg-dark-secondary);
+    border: 1px solid var(--border-color);
+}

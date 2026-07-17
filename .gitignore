@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+vendor/
+
+# PHP
+*.log
+*.cache
+*.tmp
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Uploads
+uploads/products/*
+!uploads/products/.gitkeep
